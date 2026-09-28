@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="هدیه تعاملی تولد برای مامان عزیزم">
+<title>تولد مامان عزیزم</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+  <div id="stars"></div>
+  <div id="petals"></div>
+
+  <section class="screen active" id="s1">
+    <div class="content fadeUp">
+      <div class="flower">🌷</div>
+      <h1 class="glow">یه هدیه کوچیک برای مامان</h1>
+      <p class="subtitle">امروز یه روز خیلی خاصه</p>
+      <button class="btn" onclick="go(2)">بریم داخل 💗</button>
+    </div>
+  </section>
+
+  <section class="screen" id="s2">
+    <div class="content fadeUp">
+      <div class="flower">🎀</div>
+      <h2>این هدیه برای کیه</h2>
+      <p class="subtitle">برای کسی که همیشه کنارم بوده</p>
+      <button class="btn" onclick="go(3)">برای مامانی 🌷</button>
+    </div>
+  </section>
+
+  <section class="screen" id="s3">
+    <div class="content">
+      <div class="flower">💗</div>
+      <h2>چند تا حرف از ته دل</h2>
+      <p class="subtitle">روی کارت‌ها بزن و هر کدوم رو باز کن</p>
+      <div class="cards" id="cards">
+        <div class="thanks-card" onclick="openCard(this)"><div class="front">🌸</div><div class="back">ممنونم که همیشه کنارم بودی</div></div>
+        <div class="thanks-card" onclick="openCard(this)"><div class="front">💗</div><div class="back">ممنونم که همیشه حواست به من بود</div></div>
+        <div class="thanks-card" onclick="openCard(this)"><div class="front">🌷</div><div class="back">ممنونم که با مهربونیت خونه رو قشنگ کردی</div></div>
+        <div class="thanks-card" onclick="openCard(this)"><div class="front">✨</div><div class="back">ممنونم که همیشه به من امید دادی</div></div>
+        <div class="thanks-card" onclick="openCard(this)"><div class="front">🫶</div><div class="back">ممنونم که همیشه حرفام رو شنیدی</div></div>
+        <div class="thanks-card" onclick="openCard(this)"><div class="front">🌹</div><div class="back">ممنونم برای تمام زحمت هایی که برام کشیدی</div></div>
+        <div class="thanks-card" onclick="openCard(this)"><div class="front">🩷</div><div class="back">ممنونم که همیشه باعث آرامش من بودی</div></div>
+        <div class="thanks-card" onclick="openCard(this)"><div class="front">⭐</div><div class="back">ممنونم که همیشه به من باور داشتی</div></div>
+        <div class="thanks-card" onclick="openCard(this)"><div class="front">🌙</div><div class="back">ممنونم برای تمام شب هایی که مراقبم بودی</div></div>
+        <div class="thanks-card" onclick="openCard(this)"><div class="front">🎁</div><div class="back">ممنونم که همیشه عشق رو بهم یاد دادی</div></div>
+        <div class="thanks-card" onclick="openCard(this)"><div class="front">🦋</div><div class="back">ممنونم که همیشه پشت من ایستادی</div></div>
+        <div class="thanks-card" onclick="openCard(this)"><div class="front">💐</div><div class="back">ممنونم که مامان منی</div></div>
+        <div class="thanks-card" onclick="openCard(this)"><div class="front">🌺</div><div class="back">ممنونم که با لبخندت خونه رو گرم میکنی</div></div>
+        <div class="thanks-card" onclick="openCard(this)"><div class="front">🤍</div><div class="back">ممنونم که همیشه برای من وقت گذاشتی</div></div>
+        <div class="thanks-card" onclick="openCard(this)"><div class="front">☀️</div><div class="back">ممنونم که روزهای سخت رو برام راحت تر کردی</div></div>
+        <div class="thanks-card" onclick="openCard(this)"><div class="front">🕊️</div><div class="back">ممنونم که بهم آرامش دادی</div></div>
+        <div class="thanks-card" onclick="openCard(this)"><div class="front">💎</div><div class="back">ممنونم که همیشه برام ارزشمند بودی</div></div>
+        <div class="thanks-card" onclick="openCard(this)"><div class="front">🌼</div><div class="back">ممنونم که همیشه حامی من بودی</div></div>
+      </div>
+      <button class="btn hidden" id="cardsNext" onclick="go(4)">حالا بریم سراغ نامه 💌</button>
+    </div>
+  </section>
+
+  <section class="screen" id="s4">
+    <div class="content letter-page fadeUp">
+      <div class="envelope-stage">
+        <button class="envelope" id="envelope" onclick="openEnvelope()" aria-label="باز کردن پاکت نامه">
+          <span class="envelope-paper">نامه</span>
+          <span class="envelope-back"></span>
+          <span class="envelope-flap"></span>
+          <span class="envelope-front-left"></span>
+          <span class="envelope-front-right"></span>
+          <span class="envelope-front-bottom"></span>
+          <span class="envelope-seal">SM</span>
+        </button>
+      </div>
+
+      <h2>تولد مبارک مامان سمیه</h2>
+      <p class="subtitle" id="envelopeHint">برای باز کردن نامه روی پاکت بزن</p>
+
+      <div class="letter-wrap hidden" id="letterWrap">
+        <article class="letter">
+          <div class="letter-title">برای مامان عزیزم 💗</div>
+          <div id="typing" class="typing"></div>
+          <span id="cursor" class="cursor"></span>
+        </article>
+      </div>
+
+      <button class="btn hidden" id="letterNext" onclick="go(5)">بریم برای یه بازی کوچیک 🎈</button>
+    </div>
+  </section>
+
+  <section class="screen" id="s5">
+    <div class="content fadeUp">
+      <div class="flower">🎈</div>
+      <h2>بادکنک های مامان</h2>
+      <p class="subtitle">همه بادکنک ها رو بترکون تا بریم مرحله بعد</p>
+      <div id="balloons" class="balloons"></div>
+      <p id="balloonCount" class="counter">۰ از ۸</p>
+    </div>
+  </section>
+
+  <section class="screen" id="s6">
+    <div class="content fadeUp">
+      <div class="flower">🌷</div>
+      <h2>باغ کوچیک مامان</h2>
+      <p class="subtitle">هر جا دوست داشتی بزن تا یه گل برای مامان رشد کنه</p>
+      <div id="garden" class="garden"></div>
+      <p id="gardenText" class="counter">۰ گل برای مامانی</p>
+      <button class="btn hidden" id="gardenNext" onclick="go(7)">بریم برای شمع ها 🕯️</button>
+    </div>
+  </section>
+
+  <section class="screen" id="s7">
+    <div class="content fadeUp">
+      <div class="flower">🕯️</div>
+      <h2>یه آرزو برای مامان</h2>
+      <p class="subtitle">روی هر شعله بزن تا خاموشش کنی</p>
+
+      <div class="wish-candles" id="wishCandles">
+        <button class="wish-candle" onclick="blowCandle(this)" aria-label="شمع اول">
+          <span class="candle-stick"></span><span class="candle-flame">🔥</span>
+        </button>
+        <button class="wish-candle" onclick="blowCandle(this)" aria-label="شمع دوم">
+          <span class="candle-stick"></span><span class="candle-flame">🔥</span>
+        </button>
+        <button class="wish-candle" onclick="blowCandle(this)" aria-label="شمع سوم">
+          <span class="candle-stick"></span><span class="candle-flame">🔥</span>
+        </button>
+        <button class="wish-candle" onclick="blowCandle(this)" aria-label="شمع چهارم">
+          <span class="candle-stick"></span><span class="candle-flame">🔥</span>
+        </button>
+        <button class="wish-candle" onclick="blowCandle(this)" aria-label="شمع پنجم">
+          <span class="candle-stick"></span><span class="candle-flame">🔥</span>
+        </button>
+      </div>
+
+      <p class="wish-text">ایشالا دوباره روی پاهات وایسی مامانی :)</p>
+      <button class="btn hidden" id="candleNext" onclick="go(8)">حالا بریم سراغ کیک 🎂</button>
+    </div>
+  </section>
+
+  <section class="screen" id="s8">
+    <div class="content fadeUp">
+      <div class="flower">🎂</div>
+      <h2>کیک مخصوص مامان</h2>
+      <p class="subtitle">روی کیک بزن تا سورپرایز آخر شروع بشه</p>
+
+      <button class="cake" id="cake" onclick="cutCake()" aria-label="کیک تولد">
+        <span class="cake-candle cake-candle-one"><span>🔥</span></span>
+        <span class="cake-candle cake-candle-two"><span>🔥</span></span>
+        <span class="cake-candle cake-candle-three"><span>🔥</span></span>
+        <span class="cake-top"></span>
+        <span class="cake-body"></span>
+        <span class="cake-cream"></span>
+      </button>
+    </div>
+  </section>
+
+  <section class="screen" id="s9">
+    <div class="content fadeUp final-screen">
+      <div id="burst" class="burst"></div>
+      <div class="flower">💐</div>
+      <h1 class="glow final-title">تولد مبارک مامان عزیزم</h1>
+      <p class="subtitle final-text">امیدوارم همیشه لبخند روی لبت باشه</p>
+      <div class="heart-big">💗</div>
+      <p class="subtitle">دوستت دارم مامانی</p>
+    </div>
+  </section>
+</div>
+
+
+<script src="js/app.js"></script>
+</body>
+</html>
